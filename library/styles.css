@@ -135,6 +135,12 @@ button:active {
     margin: 0 auto;
 }
 
+.row__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* MAIN SECTION */
 /* HIGHLIGHTS */
 
@@ -202,6 +208,7 @@ button:active {
 }
 
 /* FEATURES */
+/* LATEST */
 
 #features {
     padding-top: 8vw;
@@ -253,4 +260,13 @@ button:active {
 .book__emoji {
     font-size: 24px;
     margin-bottom: 8px;
+}
+
+/* EXPLORE */
+#explore {
+    background-color: rgba(115, 66, 214, 0.1);
+}
+
+.section__title--last {
+    margin: 0 0 32px 0;
 }
