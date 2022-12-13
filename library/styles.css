@@ -7,6 +7,11 @@
     letter-spacing: 0.5px;
 }
 
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 nav {
     height: 80px;
     display: flex;
@@ -14,8 +19,15 @@ nav {
 
 img {
     width: 100%;
+    height: 100%;
+    max-height: 50vh;
 }
 
+p {
+    line-height: 1.5;
+}
+
+/* HEADER SECTION */
 .nav__container {
     width: 100%;
     max-width: 1200px;
@@ -82,13 +94,12 @@ header {
 h1:not(.nav__logo) {
     font-size: 48px;
     color: #7342d6;
-    margin-bottom: 16px;
     text-align: center;
 }
 
 h2 {
     font-size: 32px;
-    margin-bottom: 32px;
+    margin: 32px 0;
     text-align: center;
 }
 
@@ -105,7 +116,94 @@ button:active {
     color: white;
     padding: 12px 24px;
     font-size: 20px;
-    border-radius: 15px;
+    border-radius: 16px;
     border: none;
 }
 
+.header__img--wrapper {
+    z-index: 2;
+    padding: 20px;
+}
+
+.container {
+    padding: 56px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* MAIN SECTION */
+/* HIGHLIGHTS */
+
+#highlights {
+    position: relative;
+}
+
+#highlights:before,
+#highlights:after {
+    content: "";
+    background: url('./assets/wave.svg');
+    position: absolute;
+    width: 101vw;
+    height: 12vw; /* Height increases as wider the screen becomes */
+    left: 0;
+    z-index: 1;
+    background-size: cover; /* Spans the whole width */
+    background-repeat: no-repeat;
+}
+
+#highlights:before {
+    top: 1px;
+    transform: translateY(-100%);
+}
+
+#highlights:after {
+    bottom: 1px;
+    transform: translateY(100%) rotate(180deg);
+}
+
+.highlight__wrapper {
+    display: flex;
+}
+
+.highlight {
+    padding: 0 24px;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.highlight__img {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #7342d648;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 28px;
+    color: #7342d6;
+    margin-bottom: 24px;
+}
+
+.highlight__subtitle {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.highlight__para {
+    max-width: 280px;
+    margin-bottom: 24px;
+}
+
+/* FEATURES */
+
+#features {
+    height: 1000px;
+    background-color: rgba(115, 66, 214, 0.1);
+}

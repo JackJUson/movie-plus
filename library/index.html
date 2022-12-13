@@ -14,6 +14,10 @@
       src="https://kit.fontawesome.com/6ed32e256a.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <title>Library</title>
   </head>
@@ -33,16 +37,71 @@
       </nav>
       <header>
         <div class="header__container">
-            <div class="header__description">
-                <h1>My personal library for 2023</h1>
-                <h2>Knowledge is <span class="text--purple">Power</span>.</h2>
-                <button class="btn">Browse books</button>
-            </div>
-            <figure>
-                <img src="./assets/undraw_reading_time_re_phf7.svg" alt="">
-            </figure>
+          <div class="header__description">
+            <h1>My personal library for 2023</h1>
+            <h2>Knowledge is <span class="text--purple">Power</span></h2>
+            <button class="btn">Browse books</button>
+          </div>
+          <figure class="header__img--wrapper">
+            <img src="./assets/undraw_reading_time_re_phf7.svg" alt="" />
+          </figure>
         </div>
       </header>
     </section>
+
+    <!-- MAIN SECTION -->
+    <main>
+      <section id="highlights">
+        <div class="container">
+          <!-- To adjust top and bottom dimension -->
+          <div class="row">
+            <!-- To adjust left and right dimension -->
+            <h2 class="section__title">
+              What <span class="text--purple">genre</span> I like to read?
+            </h2>
+            <div class="highlight__wrapper">
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-landmark"></i>
+                </div>
+                <h3 class="highlight__subtitle">Philosophy</h3>
+                <p class="highlight__para">
+                  The only man who never makes mistakes is the man who never
+                  does anything. -Theodre Roosevelt
+                </p>
+              </div>
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="highlight__subtitle">Self Improvement</h3>
+                <p class="highlight__para">
+                  People do not decide their futures, they decide their habits
+                  and their habits decide their futures. -F.M. Alexander
+                </p>
+              </div>
+              <div class="highlight">
+                <div class="highlight__img">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="highlight__subtitle">Engineering</h3>
+                <p class="highlight__para">
+                  Either I break the code or the code breaks me -Jackson Jung
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="container">
+          <!-- To adjust top and bottom dimension -->
+          <div class="row"><!-- To adjust left and right dimension --></div>
+        </div>
+      </section>
+
+      
+    </main>
   </body>
 </html>
