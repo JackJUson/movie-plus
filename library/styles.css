@@ -58,3 +58,54 @@ li {
 #landing {
     background-color: rgba(115, 66, 214, 0.1);
 }
+
+header {
+    height: calc(100vh - 80px); /* Header size would be view page minus the nav bar */
+}
+
+.header__container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.header__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1:not(.nav__logo) {
+    font-size: 48px;
+    color: #7342d6;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+.btn {
+    background-color: #7342d6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+}
+
