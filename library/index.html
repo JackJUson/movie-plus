@@ -18,6 +18,7 @@
       href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <script src="./index.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <title>Library</title>
   </head>
@@ -33,6 +34,25 @@
             <li><a href="#" class="nav__link">Contact</a></li>
             <li><a href="#" class="nav__link">Books</a></li>
           </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="#features" class="menu__link" onclick="closeMenu()">Books</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
       <header>
@@ -40,7 +60,9 @@
           <div class="header__description">
             <h1>My personal library for 2023</h1>
             <h2>Knowledge is <span class="text--purple">Power</span></h2>
-            <button class="btn">Browse books</button>
+            <a href="#features">
+              <button class="btn">Browse books</button>
+            </a>
           </div>
           <figure class="header__img--wrapper">
             <img src="./assets/undraw_reading_time_re_phf7.svg" alt="" />
@@ -57,7 +79,7 @@
           <div class="row">
             <!-- To adjust left and right dimension -->
             <h2 class="section__title">
-              What <span class="text--purple">genre</span> I like to read?
+              <span class="text--purple">Book</span> Genre
             </h2>
             <div class="highlight__wrapper">
               <div class="highlight">
@@ -97,18 +119,17 @@
       <section id="features">
         <div class="container">
           <!-- To adjust top and bottom dimension -->
-          <div class="row"><!-- To adjust left and right dimension -->
+          <div class="row">
+            <!-- To adjust left and right dimension -->
             <h2 class="section__title">
               Features <span class="text--purple">Books</span>
             </h2>
             <div class="books">
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img class="book__img" src="./assets/deep work.jpeg" alt="">
+                  <img class="book__img" src="./assets/deep work.jpeg" alt="" />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -124,11 +145,9 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img class="book__img" src="./assets/deep work.jpeg" alt="">
+                  <img class="book__img" src="./assets/deep work.jpeg" alt="" />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -144,11 +163,9 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img class="book__img" src="./assets/deep work.jpeg" alt="">
+                  <img class="book__img" src="./assets/deep work.jpeg" alt="" />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -164,11 +181,9 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img class="book__img" src="./assets/deep work.jpeg" alt="">
+                  <img class="book__img" src="./assets/deep work.jpeg" alt="" />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -196,11 +211,13 @@
             <div class="books">
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -216,11 +233,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -236,11 +255,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -256,11 +277,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -276,11 +299,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -296,11 +321,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -316,11 +343,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -336,11 +365,13 @@
               </div>
               <div class="book">
                 <figure class="book__img--wrapper">
-                  <img src="./assets/crack the coding interview.png" alt="" class="book__img">
+                  <img
+                    src="./assets/crack the coding interview.png"
+                    alt=""
+                    class="book__img"
+                  />
                 </figure>
-                <div class="book__title">
-                  BookTitle
-                </div>
+                <div class="book__title">BookTitle</div>
                 <!-- Make Javascript function here to tag emoji or rate with the stars... -->
                 <div class="book__ratings">
                   <i class="fas fa-star"></i>
@@ -390,6 +421,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>
