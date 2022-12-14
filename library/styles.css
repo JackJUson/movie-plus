@@ -7,6 +7,10 @@
     letter-spacing: 0.5px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     max-width: 100vw;       /* Removes x-axis scroll */
     overflow-x: hidden;
@@ -91,7 +95,7 @@ header {
     align-items: center;
 }
 
-h1:not(.nav__logo) {
+h1:not(.nav__logo):not(.footer__logo) {
     font-size: 48px;
     color: #7342d6;
     text-align: center;
@@ -118,6 +122,14 @@ button:active {
     font-size: 20px;
     border-radius: 16px;
     border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.no-cursor {
+    cursor: not-allowed;
 }
 
 .header__img--wrapper {
@@ -269,4 +281,29 @@ button:active {
 
 .section__title--last {
     margin: 0 0 32px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #242424;
+}
+
+.footer__logo,
+.footer__link,
+.footer__copyright {
+    color: white;
+}
+
+.footer__links {
+    margin: 24px 0;
+}
+
+.footer__link {
+    padding: 0 16px;
+    font-size: 24px;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
 }
