@@ -17,8 +17,12 @@ body {
 }
 
 /* Hides scrollbar but keep functionality */
-body::-webkit-scrollbar {
-    display: none;
+body {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 nav {
@@ -162,7 +166,6 @@ header {
 
 h1:not(.nav__logo):not(.footer__logo) {
     font-size: 56px;
-    padding: 0 24px;
     color: #7342d6;
     text-align: center;
 }
@@ -251,6 +254,7 @@ a {
 
 .highlight__wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .highlight {
@@ -374,6 +378,9 @@ footer {
     text-decoration: underline;
 }
 
+/* RESPONSIVENESS */
+
+/* SMALL PHONES, TABLETS */
 @media (max-width: 768px) {
     .nav__links {
         display: none;
@@ -381,5 +388,40 @@ footer {
 
     .btn__menu {
         display: block;
+    }
+    .header__description {
+        padding: 0 24px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .footer__logo {
+        font-size: 24px;
+    }
+    .footer__link {
+        font-size: 20px;
+    }
+
+    .book {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .book__img--wrapper {
+        width: fit-content;
+        margin-bottom: 16px;
+    }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 550px) {
+    .highlight {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    h2 {
+        font-size: 32px;
     }
 }
