@@ -13,7 +13,7 @@ async function main() {
   const genresData = await genres.json();
 
   const movieListElement = document.querySelector(".movies__list");
-  movieListElement.innerHTML = moviesData.results
+  movieListElement.innerHTML = moviesData.results.slice(0, 12)
     .map((movie) => movieHTML(movie, genresData))
     .join("");
 }
@@ -31,13 +31,11 @@ function showMovieGenre(ids, data) {
 }
 
 function movieHTML(movie, genres) {
-  return `<div class="movie">
-            <div class="movie_-container">
-              <h3>${movie.title}</h3>
-              <p>${showMovieGenre(movie.genre_ids, genres)}</p>
-              <img src=${
-                "https://image.tmdb.org/t/p/w500" + movie.poster_path
-              } alt="">
-            </div>
+  return `<div class="movie__container">
+            <h3>${movie.title}</h3>
+            <p>${showMovieGenre(movie.genre_ids, genres)}</p>
+            <img class="movie__img" src=${
+              "https://image.tmdb.org/t/p/w500" + movie.poster_path
+            } alt="">
           </div>`;
 }
