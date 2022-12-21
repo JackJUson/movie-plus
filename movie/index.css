@@ -2,13 +2,16 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
-    font-family: Outfit, sans-serif;
     letter-spacing: 0.5px;
+    color: #f8f8f8 !important;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 li {
@@ -19,8 +22,30 @@ a {
     text-decoration: none;
 }
 
+.container {
+    padding: 50px 0;
+    width: 100%;
+}
+
 .pink {
     color: #EA4873 !important;
+}
+
+/* LANDING-PAGE */
+#landing-page {
+    /* Prevents overflow view of next section for users */
+    min-height: 100vh;
+
+    /* Decreases brightness directly to background-image */
+    background: rgba(0,0,0,0.5) url("https://image.tmdb.org/t/p/original/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg");
+    background-blend-mode: darken;
+
+    /* Stretches background image without distorting dimension */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* Centers background image horizontally at all times */
+    background-position: 50% 0%;
 }
 
 /* NAVIGATION */
@@ -56,3 +81,5 @@ nav {
 .nav__link--anchor {
     font-size: 18px;
 }
+
+/* HEADER */
