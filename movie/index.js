@@ -20,28 +20,24 @@ async function main() {
 
 main();
 
-function showMovieGenre(ids, genresData) {
-  const genresArray = [];
-  for (let i = 0; i < ids.length; i++) {
-    for (const genreObject of genresData.genres) {
-      if (genreObject.id === ids[i]) {
-        genresArray.push(genreObject.name);
-      }
-    }
+function showMovieGenre(ids, data) {
+  const genreNames = [];
+  for (const genre of data.genres) {
+    ids.forEach(id => { 
+      if (genre.id === id) genreNames.push(genre.name) 
+    });
   }
-  const string = genresArray.join(", ");
-  console.log(string);
-  return string;
+  return genreNames;
 }
 
-function movieHTML(movie, genresData) {
+function movieHTML(movie, genres) {
   return `<div class="movie">
-                <div class="movie_-container">
-                    <h3>${movie.title}</h3>
-                    <p>${showMovieGenre(movie.genre_ids, genresData)}</p>
-                    <img src=${
-                      "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                    } alt="">
-                </div>
-            </div>`;
+            <div class="movie_-container">
+              <h3>${movie.title}</h3>
+              <p>${showMovieGenre(movie.genre_ids, genres)}</p>
+              <img src=${
+                "https://image.tmdb.org/t/p/w500" + movie.poster_path
+              } alt="">
+            </div>
+          </div>`;
 }
