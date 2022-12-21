@@ -5,7 +5,6 @@
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     letter-spacing: 0.5px;
-    color: #f8f8f8 !important;
 }
 
 html {
@@ -28,7 +27,11 @@ a {
 }
 
 .pink {
-    color: #EA4873 !important;
+    color: #EA4873;
+}
+
+.fa-star {
+    color: #fabf2a;
 }
 
 /* LANDING-PAGE */
@@ -58,6 +61,7 @@ nav {
     height: 90px;
     margin: 0 auto;
     padding: 0 20px;
+    color: #f8f8f8;
 }
 
 .nav__link--list {
@@ -66,7 +70,7 @@ nav {
 
 .nav__logo,
 .nav__link--anchor {
-    color: #242424;
+    color: #f8f8f8;
     font-weight: 400;
 }
 
@@ -83,3 +87,53 @@ nav {
 }
 
 /* HEADER */
+.header {
+    position: absolute;
+    max-width: 700px;
+    top: 50%;
+    left: 30%;
+    transform: translate(-30%, -50%);
+    color: #f8f8f8;
+}
+
+.header__sub-title {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.header__title {
+    font-size: 72px;
+    margin-bottom: 8px;
+}
+
+.header__rating {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 148px;
+    margin-bottom: 24px;
+}
+
+.header__rating--pg {
+    border: 1px solid #f8f8f8;
+    padding: 1px 2px;
+}
+
+.header__para {
+    margin-bottom: 32px;
+}
+
+.header__btn {
+    color: #f8f8f8;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid #f8f8f8;
+    background-color: transparent;
+    padding: 16px 32px;
+    transition: all 200ms ease;
+}
+
+.header__btn:hover {
+    cursor: pointer;
+    color: #242424;
+    background-color: #f8f8f8;
+}
