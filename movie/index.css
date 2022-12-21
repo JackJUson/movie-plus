@@ -1,0 +1,58 @@
+/* DEFAULT STYLE */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Outfit, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pink {
+    color: #EA4873 !important;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 90px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav__link--list {
+    display: flex;
+}
+
+.nav__logo,
+.nav__link--anchor {
+    color: #242424;
+    font-weight: 400;
+}
+
+.nav__logo {
+    font-size: 28px;
+}
+
+.nav__link {
+    margin: 0 16px;
+}
+
+.nav__link--anchor {
+    font-size: 18px;
+}
