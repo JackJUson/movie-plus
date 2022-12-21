@@ -20,6 +20,20 @@ async function main() {
 
 main();
 
+function showMovieGenre(ids, genresData) {
+  const genresArray = [];
+  for (let i = 0; i < ids.length; i++) {
+    for (const genreObject of genresData.genres) {
+      if (genreObject.id === ids[i]) {
+        genresArray.push(genreObject.name);
+      }
+    }
+  }
+  const string = genresArray.join(", ");
+  console.log(string);
+  return string;
+}
+
 function movieHTML(movie, genresData) {
   return `<div class="movie">
                 <div class="movie_-container">
