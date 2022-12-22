@@ -1,13 +1,30 @@
 // API 1: "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
 // API 2: "https://api.themoviedb.org/3/genre/movie/list?api_key=2269437d4f4dc8cefddc0b2f852029a4&language=en-US"
 
-const maxNumMovies = 12;
+// second job = need to change this number depending on what page user is on
+const maxNumMovies = 16;
+let moviesData;
+let movies = [];
 
-async function renderMovies() {
-  const moviesApi = await fetch(
-    "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
-  );
-  const moviesData = await moviesApi.json();
+async function renderMovies(filter) {
+  if (!moviesData) {
+    const moviesApi = await fetch(
+      "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
+    );
+    moviesData = await moviesApi.json();
+    movies.push(...moviesData.results);
+  }
+
+  if (filter === 'FEATURED') {
+    movies = [];
+    movies.push(...moviesData.results);
+  } else if (filter === 'NEWEST') {
+    movies.sort((a, b) => Date.parse(b.release_date) - Date.parse(a.release_date));
+  } else if (filter === 'OLDEST') {
+    movies.sort((a, b) => Date.parse(a.release_date) - Date.parse(b.release_date));
+  } else if (filter === 'RATING') {
+    movies.sort((a, b) => b.popularity - a.popularity);
+  }
 
   const genresApi = await fetch(
     "https://api.themoviedb.org/3/genre/movie/list?api_key=2269437d4f4dc8cefddc0b2f852029a4&language=en-US"
@@ -17,7 +34,7 @@ async function renderMovies() {
   const movieListElement = document.querySelector(".movies__list");
 
   // Set each movies list item with the given trending movies data
-  movieListElement.innerHTML = moviesData.results.slice(0, maxNumMovies)
+  movieListElement.innerHTML = movies
     .map((movie) => movieHTML(movie, genresData.genres))
     .join('');
 }
@@ -56,4 +73,8 @@ function movieHTML(movie, genreList) {
               </div>
             </div>
           </div>`;
+}
+
+function filterMovies(event) {
+  renderMovies(event.target.value);
 }
