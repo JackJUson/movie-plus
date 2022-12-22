@@ -74,6 +74,11 @@ button:hover {
     background-position: 50% 0%;
 }
 
+/* SEARCH-PAGE */
+#search-page {
+    background-color: #0f0e0efd;
+}
+
 /* NAVIGATION */
 nav {
     display: flex;
@@ -83,7 +88,7 @@ nav {
     max-width: 1400px;
     height: 90px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px 0 40px;
     color: #f8f8f8;
 }
 
@@ -143,6 +148,59 @@ nav {
 
 .header__para {
     margin-bottom: 32px;
+}
+
+/* SEARCH */
+
+.search__header {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8px 40px 40px;
+}
+
+.search__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search__input {
+    width: 360px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search__submit {
+    width: 80px;
+    position: relative;
+    left: -5px;
+    border: none;
+    outline: none;
+    color: #f8f8f8;
+    background-color: #EA4873;
+    padding: 16px 24px;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+}
+
+.search__filter {
+    color: #f8f8f8;
+    background-color: #383838;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: left;
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+.search__option {
+    border: none;
+    outline: none;
 }
 
 /* MOVIES */
@@ -227,4 +285,47 @@ nav {
 
 .movie:hover .movie__description {
     opacity: 1;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #1f1f1f;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4% 0;
+}
+
+.footer__row,
+.footer__social--link,
+.footer__term--link {
+    color: #808080;
+}
+
+.footer__social--list {
+    width: 100%;
+    font-size: 28px;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 48px;
+}
+
+.footer__term--list {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.footer__term--link {
+    text-align: center;
+    width: calc(100% / 4);
+    margin-bottom: 24px;
 }
