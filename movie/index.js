@@ -31,11 +31,19 @@ function showMovieGenre(ids, data) {
 }
 
 function movieHTML(movie, genres) {
+  const genresArray = showMovieGenre(movie.genre_ids, genres);
+
+  // inner function returns the array split in p tags 
+
+  const new1 = genresArray.map((genre) => `<p class="movie__genre">${genre}</p>\n`);
+
   return `<div class="movie__container">
-            <h3>${movie.title}</h3>
-            <p>${showMovieGenre(movie.genre_ids, genres)}</p>
             <img class="movie__img" src=${
               "https://image.tmdb.org/t/p/w500" + movie.poster_path
             } alt="">
+            <div class="movie__description">
+              <h3 class="movie__title">${movie.title}</h3>
+              ${new1.join('')}
+            </div>
           </div>`;
 }
