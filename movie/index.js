@@ -1,41 +1,47 @@
 // API 1: "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
 // API 2: "https://api.themoviedb.org/3/genre/movie/list?api_key=2269437d4f4dc8cefddc0b2f852029a4&language=en-US"
 
-async function main() {
-  const movies = await fetch(
+const maxNumMovies = 12;
+
+async function renderMovies() {
+  const moviesApi = await fetch(
     "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
   );
-  const moviesData = await movies.json();
+  const moviesData = await moviesApi.json();
 
-  const genres = await fetch(
+  const genresApi = await fetch(
     "https://api.themoviedb.org/3/genre/movie/list?api_key=2269437d4f4dc8cefddc0b2f852029a4&language=en-US"
   );
-  const genresData = await genres.json();
+  const genresData = await genresApi.json();
 
   const movieListElement = document.querySelector(".movies__list");
-  movieListElement.innerHTML = moviesData.results.slice(0, 12)
-    .map((movie) => movieHTML(movie, genresData))
-    .join("");
+
+  // Set each movies list item with the given trending movies data
+  movieListElement.innerHTML = moviesData.results.slice(0, maxNumMovies)
+    .map((movie) => movieHTML(movie, genresData.genres))
+    .join('');
 }
 
-main();
+renderMovies();
 
-function showMovieGenre(ids, data) {
+function showMovieGenre(movieGenreIds, genreList) {
   const genreNames = [];
-  for (const genre of data.genres) {
-    ids.forEach(id => { 
+
+  // Filter genre names with matching ids
+  for (const genre of genreList) {
+    movieGenreIds.forEach(id => { 
       if (genre.id === id) genreNames.push(genre.name) 
     });
   }
   return genreNames;
 }
 
-function movieHTML(movie, genres) {
-  const genresArray = showMovieGenre(movie.genre_ids, genres);
+function movieHTML(movie, genreList) {
+  // Obtain genre name from the genre id of each movie
+  const genres = showMovieGenre(movie.genre_ids, genreList);
 
-  // inner function returns the array split in p tags 
-
-  const new1 = genresArray.map((genre) => `<p class="movie__genre">${genre}</p>\n`);
+  // Converting each genre string within HTML para tag
+  const genrePara = genres.map((genre) => `<p class="movie__genre">${genre}</p>\n`);
 
   return `<div class="movie__container">
             <img class="movie__img" src=${
@@ -43,7 +49,7 @@ function movieHTML(movie, genres) {
             } alt="">
             <div class="movie__description">
               <h3 class="movie__title">${movie.title}</h3>
-              ${new1.join('')}
+              ${genrePara.join('')}
             </div>
           </div>`;
 }
