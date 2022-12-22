@@ -41,15 +41,19 @@ function movieHTML(movie, genreList) {
   const genres = showMovieGenre(movie.genre_ids, genreList);
 
   // Converting each genre string within HTML para tag
-  const genrePara = genres.map((genre) => `<p class="movie__genre">${genre}</p>\n`);
+  const genrePara = genres.map((genre) => `<div class="movie__genre">${genre}</div>\n`);
 
   return `<div class="movie__container">
-            <img class="movie__img" src=${
-              "https://image.tmdb.org/t/p/w500" + movie.poster_path
-            } alt="">
-            <div class="movie__description">
-              <h3 class="movie__title">${movie.title}</h3>
-              ${genrePara.join('')}
+            <div class="movie">
+              <img class="movie__img" src=${
+                "https://image.tmdb.org/t/p/w500" + movie.poster_path
+              } alt="">
+              <div class="movie__description">
+                <h3 class="movie__title">${movie.title}</h3>
+                <div class="movie__genres">
+                  ${genrePara.join('')}
+                </div>
+              </div>
             </div>
           </div>`;
 }
