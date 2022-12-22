@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/6ed32e256a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+    <title>Movie+</title>
+  </head>
+  <body>
+    <section id="search-page">
+      <nav>
+        <div class="nav__logo">Movie<span class="pink">+</span></div>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a href="./index.html" class="nav__link--anchor link__hover--effect"
+              >Home</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="./search.html"
+              class="nav__link--anchor link__hover--effect"
+              >Movies</a
+            >
+          </li>
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor link__hover--effect"
+              >My List</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <header class="search__header">
+        <div class="search__row">
+          <form action="" class="search__bar">
+            <input type="text" class="search__input" placeholder="Enter keywords...">
+            <button type="submit" class="search__submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <select class="search__filter" onchange="filterMovies(event)">
+            <option class="search__option" value="" disabled selected>Sort</option>
+            <option class="search__option" value="FEATURED">Featured</option>
+            <option class="search__option" value="NEWEST">Newest</option>
+            <option class="search__option" value="OLDEST">Oldest</option>
+            <option class="search__option" value="RATING">Rating</option>
+          </select>
+        </div>
+      </header>
+    </section>
+
+    <section id="movies">
+      <div class="container">
+        <div class="row">
+          <div class="section__title--border">
+            <h1 class="section__title">Popular Movies</h1>
+          </div>
+          <div class="movies__list">
+            <div class="movie__container">
+              <div class="movie">
+                <img class="movie__img" src="" alt="" />
+                <div class="movie__description">
+                  <h3 class="movie__title">Movie Title</h3>
+                  <div class="movie__genres">
+                    <p class="movie__genre"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
