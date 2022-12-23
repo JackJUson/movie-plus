@@ -1,17 +1,16 @@
 // API 1: "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
 // API 2: "https://api.themoviedb.org/3/genre/movie/list?api_key=2269437d4f4dc8cefddc0b2f852029a4&language=en-US"
 
-// second job = need to change this number depending on what page user is on
-const maxNumMovies = 16;
+const maxNumMovies = 16; // Numbers fixed should be changed depending on users page view
 let moviesData;
 let movies = [];
+let mainApi = "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4";
 
 async function renderMovies(filter) {
   if (!moviesData) {
-    const moviesApi = await fetch(
-      "https://api.themoviedb.org/3/trending/movie/week?api_key=2269437d4f4dc8cefddc0b2f852029a4"
-    );
+    const moviesApi = await fetch(mainApi);
     moviesData = await moviesApi.json();
+    movies = [];
     movies.push(...moviesData.results);
   }
 
