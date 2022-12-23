@@ -15,7 +15,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./index.css" />
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
+    <script src="./search.js" defer></script>
     <title>Movie+</title>
   </head>
   <body>
@@ -45,9 +46,10 @@
 
       <header class="search__header">
         <div class="search__row">
-          <form action="" class="search__bar">
-            <input type="text" class="search__input" placeholder="Enter keywords...">
-            <button type="submit" class="search__submit">
+          <form id="search__form" class="search__bar">
+            <input type="text" id="search__input" class="search__input" placeholder="Enter keywords...">
+            <!-- <input type="text" id="search__input" class="search__input" placeholder="Enter keywords..." oninput="changeApi(event)"> -->
+            <button type="button" id="search__button" class="search__button">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
