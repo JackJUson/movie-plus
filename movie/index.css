@@ -168,12 +168,12 @@ nav {
     width: 360px;
     padding: 16px 24px;
     border: none;
-    border-radius: 8px 0 0 8px;
     outline: none;
+    border-radius: 8px 0 0 8px;
     font-size: 16px;
 }
 
-.search__submit {
+.search__button {
     width: 80px;
     position: relative;
     left: -5px;
@@ -185,6 +185,21 @@ nav {
     border-radius: 0 8px 8px 0;
     font-size: 16px;
 }
+
+
+.fa-magnifying-glass {
+    transition: all 200ms ease;
+}
+
+.search__button:hover .fa-magnifying-glass {
+    transform: scale(1.2);
+}
+
+.search__button:hover {
+    color: #f8f8f8;
+    background-color: #ee7d9b;
+}
+
 
 .search__filter {
     color: #f8f8f8;
