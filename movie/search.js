@@ -5,6 +5,13 @@ let searchInput;
 const input = document.getElementById("search__input");
 const button = document.getElementById("search__button");
 
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    button.click();
+  }
+})
+
 button.addEventListener('click', renderSearchedMovies);
 
 function renderSearchedMovies() {
